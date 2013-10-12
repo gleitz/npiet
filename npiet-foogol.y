@@ -43,7 +43,7 @@ char *version = "v1.3";
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <malloc.h>
+#include <sys/malloc.h>
 #include <limits.h>
 #include <time.h>
 

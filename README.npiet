@@ -2,6 +2,7 @@
 
 	README.npiet:					Jun 2004
       (schoenfr@web.de)					Nov 2009
+      (gleitz@mit.edu)                  Oct 2013
 
 
 
@@ -30,6 +31,7 @@ language'' definition is avail here:
 
 to compile and install npiet and the additional programs and files run 
 
+    brew install libgd # mac os
 	./configure
 	make
 	make install
