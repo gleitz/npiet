@@ -1,0 +1,22 @@
+dnl
+dnl	This file is an input file used by the GNU "autoconf" program to
+dnl	generate the file "configure", which is run during installation
+dnl	to configure the system for the local environment.
+dnl
+AC_INIT(npiet.c)
+AC_CONFIG_HEADER(config.h)
+
+AC_PROG_CC
+AC_PROG_INSTALL
+
+AC_CHECK_HEADERS(gd.h png.h gif_lib.h)
+AC_CHECK_LIB(gd, main, [LIBS="$LIBS -lgd"])
+AC_CHECK_LIB(png, main, [LIBS="$LIBS -lpng"])
+AC_CHECK_LIB(gif, main, [LIBS="$LIBS -lgif"])
+AC_CHECK_LIB(z, main, [LIBS="$LIBS -lz"])
+AC_CHECK_LIB(m, main, [LIBS="$LIBS -lm"])
+
+AC_SUBST(DEFS)
+AC_SUBST(LIBS)
+
+AC_OUTPUT(Makefile)

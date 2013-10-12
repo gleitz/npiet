@@ -1,0 +1,23 @@
+begin
+
+  /* note: contains extensions to foogol */
+
+  integer i, j;
+
+  i := 999; 
+  j := 128;
+
+  if i * i / j = 7796 then prints ("1 ok\n") else prints ("1 err\n");
+  if (i * i) / j = 7796 then prints ("1a ok\n") else prints ("1a err\n");
+  if ((i * i) / j) = 7796 then prints ("1b ok\n") else prints ("1b err\n");
+  if i / j * i = 6993 then prints ("2 ok\n") else prints ("2 err\n");
+  if (i / j) * i = 6993 then prints ("2 ok\n") else prints ("2 err\n");
+  if ((i / j) * i) = 6993 then prints ("2 ok\n") else prints ("2 err\n");
+  if i / j * i + 1 = (((999 / 128) * 999) + 1) then 
+	prints ("3 ok\n") else prints ("3 err\n");
+  if (((i / j) * i) + 1) = 6994 then 
+	prints ("3a ok\n") else prints ("3a err\n");
+  if 1 + i / j * i = (1 + ((999 / 128) * 999)) then 
+	prints ("3b ok\n") else prints ("3b err\n")
+
+end

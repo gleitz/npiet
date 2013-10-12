@@ -1,0 +1,36 @@
+begin
+
+integer i, j;
+
+i := 3;
+
+if i = 3 then
+  if i # 3 then
+    printn (2)
+  else
+    printn (1);
+
+if i # 3 then
+  if i = 3 then
+    printn (4)
+  else
+    printn (3)
+else
+  printn (2);
+
+if i # 3 then
+  if i = 3 then
+    printn (5)
+  else
+    printn (6)
+else
+  if i = 3 then
+    printn (3)
+  else
+    printn (1);
+
+if 1 = 1 then
+  prints ("\n")
+
+end
+

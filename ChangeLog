@@ -1,0 +1,155 @@
+
+2011-09-23  <schoenfr@myth>
+
+	* version set to 1.3a
+
+	* npiet.c: added patch from "Maks Verver" <maksverver@geocities.com>
+	  fixing compile incompatibility for libpng v1.5.0 or newer.
+	
+2011-08-05  <schoenfr@myth>
+
+	* version set to 1.3
+
+	* npiet.c: if -te 0 (trace end option) is set, do not paint
+	  starting dot at all.
+
+	* npiet.c: if -ts or -te (trace start / end) is present 
+	  implicitly assume graphical tracing should take place.
+
+	* npiet-foogol.y: ass options -cs <n> to set a output codel size,
+	  allowing to create larger codel sizes by option.
+
+	* npiet-foogol.y: add new experimental option -rnd to get some
+	  more randomisation at starting colors - currently demonstrates
+	  the fragile output generation at first place - use with care ;-)
+	
+2011-03-12  <schoenfr@myth>
+
+	* version set to 1.2b
+
+	* added patch from "Allan Wirth" <allanlw@gmail.com> to avoid
+	  bison error with newer bison version (at least 2.4.1).
+
+	  thanks a lot for the patch!
+
+	* remove gcc warning about unchecked return value of fscanf.
+	
+	
+2010-01-27  <schoenfr@chappell>
+
+	* version set to 1.2a
+
+	* added cygwin windows binary version 1.2
+
+	* fixed wrong named --help output about -v11 option.
+
+2010-01-23  <schoenfr@chappell>
+
+	* version set to 1.2
+
+	* reworked the white codel crossing to get better trace pictures.
+
+	  this is based on the previous ``white_bug'' code, which was not
+	  that a bug at all ;)
+
+	  with v1.1 there was a noop painted from before entrance to the
+	  white codels to the exit codel.  this looked quite confusing.
+
+ 	* the old -v1 backward compatibility flag is now gone.  with
+	  clarification of the execution path, it should be no longer
+	  necessary.
+	
+2009-11-15  <schoenfr@chappell>
+
+        * version set to 1.1a
+	
+	* added fix for stack allocation bug on 64 bit platforms
+	  from Nelson Castillo <arhuaco@freaks-unidos.net>:
+	
+	  ``Stack is long and it was allocated with sizeof(int). I noticed
+	  the bug by compiling on the AMD64 arch.''
+
+	  thanks a lot.
+
+	* add -Wall as default option and fixed some warnings about 
+	  sign of string buffers and printf character argument.
+
+2009-10-02    <schoenfr@chappell>
+
+	* version set to 1.1
+	
+	* npiet.c: added commandline option -v1 to get npiet version 1.0
+	  behavior. 	
+	
+	* npiet.c: added patch from Yusuke ENDOH <mame@tsg.ne.jp>
+
+          - fixes bug printing a chacter (%c instead of %lc)
+
+	  - runtime behavior:
+
+   	    ``According to `Clarification of white block behaviour
+	      (added 25 January, 2008)' in the Piet specification [1],
+	      when sliding into a black block, the interpreter must
+	      not stay in the coloured block but move to the white
+	      block. But the current behaviour of npiet is `stay'.''
+
+	    thank's a lot for the patch.
+
+	
+2006-03-16    <schoenfr@chappell.home>
+
+	* npiet.c: version set to 1.0a
+	
+	* npiet.c: added patch from Bertram Felgenhauer <int-e@gmx.de>.
+	  the patch adds the option -dpbug to simulate the perl's
+	  interpreter behaviour.  especially this allows to run the towers
+	  of hanoi example.
+
+	
+2004-09-27    <schoenfr@chappell.home>
+
+	* npiet-foogol.y: fixed comment parsing (a // in the input
+	  stopped the comment parser).
+
+	* version set to 0.2b
+	
+
+2004-08-08    <schoenfr@chappell.home>
+
+	* npiet-foogol.y: if-then-else and while-do code added.
+
+	* smart push tries harder to calculate the number
+	  instead of creating long lines (but here is lot to do).
+
+	* more foogol tests created.
+
+	* lots of minor fixes.
+
+	* version set to 0.2a
+	
+
+2004-07-04  Erik Schoenfelder  <schoenfr@chappell.home>
+
+	* npiet-foogol.y: version set to 0.1a.
+	  this initial relase can only translate output of numbers
+	  and strings.
+
+	
+2004-06-26  Erik Schoenfelder  <schoenfr@chappell.home>
+
+	* stack type set to array of longs (previously int's)
+
+	* core dump when having a division by zero handled by
+	  pushing a 99999999 to stack, and continuing.
+	
+
+2004-06-26  Erik Schoenfelder  <schoenfr@chappell.home>
+
+	* npiet.c: version set to v0.3a
+
+	* added gif format for input.  
+	  if header lib_gif.h and library -lgif is found by configure,
+	  reading of gif formatted programs is compiled in.
+	  (there a some restrictions on the format, but simple gif's
+	  should be no problem).
+

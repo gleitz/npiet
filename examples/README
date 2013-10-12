@@ -1,0 +1,33 @@
+
+
+	examples/README:				07'2004
+	(schoenfr@web.de)				08'2004
+
+
+
+some examples of the piet programming language:
+
+(with varying codel size)
+
+
+  hi.png	- prints Hi
+ 
+  loop.png	- a simple loop printing from 10 backward
+ 
+  nfib.png	- prints the Fionacci numbers below 1000
+ 
+  nhello.png    - easy hello world example
+
+  nprime.gif    - prime number tester 
+		  reads a number from input and outputs Y or N
+
+  nfhello.foo   - foogol Hello World source
+  nfhello.gif   - sample foogol Hello World piet program
+
+
+
+--
+Tue Aug 10 20:57:45 MEST 2004
+
+
+

@@ -1,0 +1,81 @@
+.TH NPIET-FOOGOL 1 "Aug 2011" "npiet v1.3"
+.SH NAME
+npiet-foogol \- a foogol to piet compiler
+.SH SYNOPSIS
+.B npiet-foogol
+[
+.B \-v
+|
+.B \-d
+] [
+.BI "-w" " <n>"
+] [
+.BI "-b" " <n>"
+] [
+.BI "-cs" " <n>"
+]
+.I inputfile
+.SH DESCRIPTION
+.B npiet-foogol
+translates foogol input to a piet program. So npiet-foogol creates a
+picture from foogol source.  The picture is, well should be, a valid
+piet program and can be executed, eg. by the npiet interpreter.
+.br
+.SH OPTIONS
+.TP
+.B \-h
+print usage help and exit.
+.TP
+.B \-v
+be somewhat verbose.
+.TP
+.B \-d
+print debug output (lot's of more or less cryptic and mostly useless blurb).
+.TP
+.B \-w <n>
+Sets a wrap-width in pixel. This gives the compiler a hint about a
+block width to use when generating expressions or statements. 
+.br
+Usually code is generated left to right until the wrap-width is reached
+and then to the left. To avoid codel overlaps in loops and conditionals, code
+is generated with a virtual left border, but this wrap-width too.  
+Here is lot of optimisation possible.
+.TP
+.B \-b <n>
+Sets the base used by generating a number. The default is 7 and a
+value greater or equal of 2 is acceptable.
+.br
+In a piet program the number of codels (here pixels) of a color block
+represents a number.  To be able to push a large number on the stack
+without wasting a lot of ink, the number is calculated and the given
+base is used to do so.
+
+.TP
+.B \-cs <n>
+Sets the output codel size to n pixels. The default is 1.
+Use a higher value to get a larger output picture.
+
+.TP
+.B \-rnd
+Experimental feature to set the start codel not always to red, but to
+a somewhat more random value.  This does not work reliable - please
+avoid if running in trouble...
+
+.B \-o <filename>
+Sets the output filename.  Default is npiet-foogol.png.
+.TP
+.B inputfile
+The foogol program to read. Use a - to read from <stdin>.
+.SH FILES
+.B "npiet-foogol.png"
+- default name of the piet program file to write. It is overwritten if
+it exists.
+.SH AUTHOR
+Erik Schoenfelder <schoenfr@web.de>.
+.SH BUGS
+Surely lots. 
+.SH SEE ALSO
+.BR npiet(1),
+.BR npietedit(1)
+.br
+.B "http://www.bertnase.de/npiet/"

@@ -1,0 +1,27 @@
+begin
+
+ /* note: contains extensions to foogol */
+
+ integer i, j;
+
+ i := 3;
+ j := 5;
+
+ begin
+
+  if (i * j) = 15 then prints ("1 ok\n") else prints ("1 err\n");
+  if (j * i) = 15 then prints ("2 ok\n") else prints ("2 err\n");
+  if (j * i + 1) = 16 then prints ("3 ok\n") else prints ("3 err\n");
+  if (1 + j * i) = 16 then prints ("3 ok\n") else prints ("3 err\n");
+  if (-1 + 2) = 1 then prints ("4 ok\n") else prints ("4 err\n");
+  if (2 + -1) = 1 then prints ("5 ok\n") else prints ("5 err\n");
+  if (-2 - -1) = -1 then prints ("6 ok\n") else prints ("6 err\n");
+  if (1 < 2) = 1 then prints ("7 ok\n") else prints ("7 err\n");
+  if (1 > 2) = 0 then prints ("8 ok\n") else prints ("8 err\n");
+  if (2 < 1) = 0 then prints ("9 ok\n") else prints ("9 err\n");
+  if (2 > 1) = 1 then prints ("10 ok\n") else prints ("10 err\n");
+  if (2 = 1) = 0 then prints ("11 ok\n") else prints ("11 err\n");
+  if (2 # 1) = 1 then prints ("12 ok\n") else prints ("12 err\n")
+
+ end
+end

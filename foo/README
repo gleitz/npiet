@@ -1,0 +1,23 @@
+
+
+	foo/README:					08'2004
+        (schoenfr@web.de)
+
+
+some foo language examples to test the npiet-foogol compiler and npiet
+interpreter.
+
+
+especially:
+
+  hello-world.foo	- prints Hello-World!
+
+  foogol-example.foo    - the original foogol (and cfoogol) prime tester
+			  example
+
+  99-bottles.foo	- prints the 99 bottles of beer lyrics
+
+
+
+--
+Tue Aug 10 20:57:13 MEST 2004

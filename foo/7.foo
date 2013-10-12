@@ -1,0 +1,29 @@
+begin
+
+integer i, j;
+
+j := 0;
+
+while j # 6 do begin
+
+  i := 0;
+
+  while i # 6 do begin
+
+    prints ("i=");
+    printn (i);
+    prints (" j=");
+    printn (j);
+    prints (" -> ");
+    printn (10 * j + i);
+    prints ("\n");
+
+    i := i + 1
+
+ end;
+
+ j := j + 1
+
+end
+
+end

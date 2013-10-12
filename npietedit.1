@@ -1,0 +1,45 @@
+.TH NPIETEDIT 1 "May 2004" "npietedit v0.1"
+.SH NAME
+npietedit \- an simple editor for the piet programming language
+.SH SYNOPSIS
+.B npietedit
+.I "[ <filename> ]"
+.SH DESCRIPTION
+.B npietedit
+is an simple editor (written in Tk/Tcl) for the piet programming language.
+.br
+TBD: write more
+.br
+quick:
+.br
+- reads ppm ascii or formats read by Tk/Tcl.
+.br
+- writes ppm ascii output (regardless of the suffix !)
+.br
+- every pixel read is a codel (knows nothing about codelsizes)
+.br
+- left mouse selects color from color bar
+.br
+- left mouse paints color on paint area
+.br
+- middle mouse selects color from paint area 
+.br
+- left mouse selects next-color from command area 
+.br
+- shrink / enlarge decreases / increases width and height
+.br
+- ...
+.SH FILES
+.B "npietedit-filename.ppm"
+- name of the default input / output file.
+.SH AUTHOR
+Erik Schoenfelder <schoenfr@web.de>.
+.SH BUGS
+None seen - they are hidden in the oil painting ;-)
+.SH SEE ALSO
+.BR npiet (1)
+.BR wish (1)
+.br
+.B "http://www.bertnase.de/npiet/"
+.br
+.B "http://www.dangermouse.net/esoteric/piet.html"

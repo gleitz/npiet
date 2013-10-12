@@ -1,0 +1,11 @@
+begin
+
+  if 1 then printn (1);  
+  if 0 then printn (1);  
+
+  if 1 then printn (1) else printn (0);
+  if 0 then printn (1) else printn (0);
+
+  prints ("\n")
+
+end

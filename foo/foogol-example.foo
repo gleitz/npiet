@@ -1,0 +1,21 @@
+begin
+  integer n, div, sub, test, testcopy, found, max;
+  test := 2; max := 10; /* number of primes wanted */
+  while n # max do begin
+    div:= test-1; found:= 0;
+    while div-1 do begin
+      testcopy:= test; sub:= 0;
+      while testcopy do begin
+        sub:= sub+1; if sub = div then sub:= 0;
+        testcopy:= testcopy-1
+      end;
+      if sub = 0 then found:= 1;
+      div:= div-1
+    end;
+    if found = 0 then begin
+      n:= n+1;
+      printn(test); prints(" is prime number "); printn(n); print
+    end;
+    test:= test+1
+  end
+end

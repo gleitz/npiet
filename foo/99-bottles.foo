@@ -1,0 +1,30 @@
+begin
+
+  /* 99-bottles.foo:                                       */
+
+  /* you can find a copy of the ``foogol'' posting here:   */
+  /* http://www.bertnase.de/html/foogol.html               */
+
+  integer i;
+
+  i := 99;
+
+  while i # 0 do begin
+
+    printn (i);
+    prints (" bottle"); if i # 1 then prints ("s");
+    prints ("  of beer on the wall,\n");
+    printn (i);
+    prints (" bottle"); if i # 1 then prints ("s");
+    prints ("  of beer,\n");
+    prints ("take one down, pass it around,\n");
+    i := i - 1;
+    if i # 0 then printn (i) else prints ("no more");
+    prints (" bottle"); if i # 1 then prints ("s");
+    prints (" of beer on the wall.\n\n")
+
+  end;
+
+  prints ("Time to buy some more beer...\n")
+
+end

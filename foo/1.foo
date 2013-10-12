@@ -1,0 +1,22 @@
+begin
+
+integer i, j;
+
+i := 3;
+j := 5;
+
+begin
+
+integer l;
+
+l := 4;
+
+printn (i);
+printn (l)
+end;
+
+printn (j);
+
+prints ("\n")
+
+end

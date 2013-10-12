@@ -1,0 +1,155 @@
+.TH NPIET 1 "Aug 2011" "npiet v1.3"
+.SH NAME
+npiet \- an interpreter for the piet programming language
+.SH SYNOPSIS
+.B npiet
+[
+.B \-v
+|
+.B \-q
+|
+.B \-d
+|
+.B \-dpbug
+|
+.B \-v11
+|
+.B \-t
+]
+[
+.BI "-e" " <n>"
+]
+[
+.B \-tpic
+]
+[
+.BI "-tpf" " <n>"
+]
+[
+.B \-tps
+]
+[
+.BI \-ts " <n>"
+]
+[
+.BI \-te " <n>"
+]
+.I inputfile
+.SH DESCRIPTION
+.B npiet
+is an interpreter for the piet programming language.  In this language
+the programs are pictures, build out of 18 colors and black and white,
+where changes in the color are stack-based commands.
+.br
+If the input (supported is ppm and optional gif and png format) includes
+unknown colors, they are substituted per default by white (optional by
+black or leading to an error).
+.br
+The input picture is per default examined, if it is zoomed (for better
+`readability') and the zoomfactor (the codelsize) is automatically
+guessed (if this failes, please specify the codelsize by the -cs
+option).
+.br
+Special fun gives the optional output of a trace picture.  If the GD
+library is compiled in, the npiet interpreter can paint the trace of the
+program run to a png file, named npiet-trace.png.  Different zoom
+factors and additional options lead to varying detail and readability.
+.SH OPTIONS
+.TP
+.B \-h
+print usage help and exit.
+.TP
+.B \-v
+be somewhat verbose.
+.TP
+.B \-q
+be more quiet.
+.TP
+.B \-d
+print debug output (lot's of more or less cryptic and mostly useless blurb).
+.TP
+.B \-dpbug
+changes the execution mode of the perl piet interpreter.  This changes
+the behavior when crossing white blocks (wrong interpretation of
+blocking after white).
+.TP
+.B \-v11
+changes the execution mode to the npiet version 1.1 interpreter. This
+changes to the first fixed version of corrected behavior when crossing
+white blocks.
+.TP
+.B \-t
+print trace details.  For every step the interpreter print some details:
+.nf
+  trace: step 0  (0,0/r,l nB -> 3,0/r,l dB):
+  action: push, value 9
+  trace: stack (1 values): 9
+.fi
+The trace step with the codel x,y coordinates and the dp,cc values and
+the codel color (here: normal Blue to dark Blue).
+.br
+The action describes the command executed and the stack with its
+values is shown.
+.TP
+.B \-e <n>
+Sets the number of execution steps.  This allows to abort a erroneous program, but the default is unlimited, ie. run until program end (or forever ;-).
+.TP
+.B \-tpic
+Create a trace picture. The file is name
+.I npiet-trace.png .
+The picture is written on program exit, or if the normal trace options
+is specified too, after every step (makes execution notably slower,
+because this is quite expensive, but maybe helpful). (only avail if
+compiled with gd support).
+.TP
+.B \-tpf <n>
+Sets the size of the pixel in the trace picture. For small input
+files, eg. 20x20 codels, the resulting trace picture is 640x640 pixel
+with a pizel zoom of 32.  Just try different values, to get useable
+readability versus picture size. There are some internal values, where
+different information is written by different zoom factors.
+(only avail if compiled with gd support).
+.TP
+.B \-tps
+Do not include the dp/cc tries in the trace picture. This can increase
+readability with smaller pixel zoom factors. Additional there are some
+internal values too, where different information is written depending
+of the zoom factor. (only avail if compiled with gd support).
+.TP
+.B \-ts <n>
+Please look at -te <n> just below:
+.TP
+.B \-te <n>
+Values where to start and end when painting a trace picture. To avoid
+clobbered output when running in loops, for better readability a start
+and an end step can be specified.
+.br
+Note: this does not stop or change the program execution or the textual trace output. It affects only the saved image.
+.br
+Note: this enables now tracing, so specifying -tpic is no longer necessary.
+.br
+Note: if you specify -te 0 you can easily get an bigger picture
+of the input saved ;-)
+.TP
+.B inputfile
+The picture to read. For ppm-formatted pictures this may be a - to read from
+<stdin>.
+.SH EXAMPLES
+.B "npiet -tpic hello.gif"
+- run the hello.gif program and create a trace file named 
+.I npiet-trace.png .
+.SH FILES
+.B "npiet-trace.png"
+- name of the trace picture file. It is overwritten if it exists.
+.SH AUTHOR
+Erik Schoenfelder <schoenfr@web.de>.
+.br
+-dpbug option by Bertram Felgenhauer <int-e@gmx.de>.
+.SH BUGS
+None seen - they are hidden in the oil painting ;-)
+.SH SEE ALSO
+.BR npietedit (1)
+.br
+.B "http://www.bertnase.de/npiet/"
+.br
+.B "http://www.dangermouse.net/esoteric/piet.html"

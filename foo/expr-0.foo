@@ -1,0 +1,32 @@
+begin
+
+ printn (9);
+ prints ("\n");
+ printn (10);
+ prints ("\n");
+ printn (11);
+ prints ("\n");
+
+ printn (99);
+ prints ("\n");
+ printn (100);
+ prints ("\n");
+ printn (101);
+ prints ("\n");
+
+ printn (999);
+ prints ("\n");
+ printn (1000);
+ prints ("\n");
+ printn (1001);
+ prints ("\n");
+
+ printn (9999);
+ prints ("\n");
+ printn (10000);
+ prints ("\n");
+ printn (10001);
+ prints ("\n")
+
+
+end
