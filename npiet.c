@@ -2131,7 +2131,7 @@ piet_action (int c_col, int a_col, int num_cells, char *msg)
 	tprintf ("info: cannot read char from stdin; reason: %s\n",
 		 strerror (errno));
       } else {
-	stack [num_stack++] = c % 0xff;
+	stack [num_stack++] = c & 0xff;
       }
       tdump_stack ();
 
